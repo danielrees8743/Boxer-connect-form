@@ -4,11 +4,17 @@
   "description": "Data collection for capstone project",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "cd server && nodemon app.js",
+    "client": "cd boxer-connect-form && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [
     "boxer-connect"
   ],
   "author": "Dan Rees",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "morgan": "^1.10.0"
+  }
 }
