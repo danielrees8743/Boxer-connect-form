@@ -1,6 +1,15 @@
 import Boxer from '../models/boxerModel.js';
 
-export const addBoxer = async (req, res) => {
+const getAllBoxers = async (req, res) => {
+  try {
+    const boxers = await Boxer.find();
+    res.status(200).json(boxers);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const addBoxer = async (req, res) => {
   const {
     firstName,
     lastName,
@@ -34,10 +43,12 @@ export const addBoxer = async (req, res) => {
       licenseNumber,
       fitToFight,
     });
+    console.log(boxer);
     res.status(201).json({ message: 'Boxer added' });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error.message });
   }
 };
 
-export default { addBoxer };
+export default { addBoxer, getAllBoxers };

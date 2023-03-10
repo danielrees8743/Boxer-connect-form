@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "server": "cd server && nodemon app.js",
-    "client": "cd boxer-connect-form && npm run dev",
+    "client": "cd client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [
