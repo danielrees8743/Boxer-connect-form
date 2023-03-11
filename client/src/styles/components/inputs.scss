@@ -9,6 +9,7 @@ input {
   color: $font-color;
   background-color: $brand-color;
   transition: all 0.2s ease-in-out;
+  width: 25%;
   &:focus {
     outline: none;
     border-color: #333;
@@ -35,6 +36,7 @@ select {
   color: #333;
   background-color: #fff;
   transition: all 0.2s ease-in-out;
+  // width: 25%;
   &:focus {
     outline: none;
     border-color: #333;

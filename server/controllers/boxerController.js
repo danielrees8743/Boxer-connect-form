@@ -11,6 +11,7 @@ const getAllBoxers = async (req, res) => {
 
 const addBoxer = async (req, res) => {
   const {
+    club,
     firstName,
     lastName,
     nickname,
@@ -20,7 +21,7 @@ const addBoxer = async (req, res) => {
     weight,
     height,
     stance,
-    picture,
+    // picture,
     id,
     fights,
     licenseNumber,
@@ -28,6 +29,7 @@ const addBoxer = async (req, res) => {
   } = req.body;
   try {
     const boxer = await Boxer.create({
+      club,
       firstName,
       lastName,
       nickname,
@@ -37,14 +39,17 @@ const addBoxer = async (req, res) => {
       weight,
       height,
       stance,
-      picture,
+      // picture,
       id,
       fights,
       licenseNumber,
       fitToFight,
     });
     console.log(boxer);
-    res.status(201).json({ message: 'Boxer added' });
+    res.status(201).json({
+      boxer,
+      message: 'Boxer added',
+    });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error.message });

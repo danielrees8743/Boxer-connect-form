@@ -1,4 +1,3 @@
-import mongoose from 'mongoose';
 import Club from '../models/clubModel.js';
 
 const getAllClubs = async (req, res) => {

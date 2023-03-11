@@ -6,3 +6,10 @@ body {
   font-size: $main-font-size;
   color: #333;
 }
+
+h2 {
+  font-size: $h2-font-size;
+  text-transform: uppercase;
+  color: $font-color;
+  padding: 20px;
+}
