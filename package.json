@@ -1,6 +1,6 @@
 {
   "name": "boxer-connect-boxer-form",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Data collection for capstone project",
   "main": "app.js",
   "scripts": {
@@ -14,7 +14,12 @@
   "author": "Dan Rees",
   "license": "ISC",
   "dependencies": {
+    "-": "^0.0.1",
     "concurrently": "^7.6.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "npm": "^9.6.2"
+  },
+  "devDependencies": {
+    "patch-package": "^6.5.1"
   }
 }
