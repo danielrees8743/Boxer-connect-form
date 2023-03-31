@@ -3,6 +3,7 @@ import { useQuery, useMutation } from '@tanstack/react-query';
 import { fetchClubs, sendBoxerForm } from '../hooks/useFetch';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import { AxiosError } from 'axios';
 
 export default function BoxerForm() {
   const { data, isLoading, isError } = useQuery(['clubs'], () => fetchClubs());
@@ -32,16 +33,19 @@ export default function BoxerForm() {
         const data = await postForm.mutateAsync(values);
         Swal.fire({
           title: 'Thank you!',
-          text: `Added ${data.boxer.firstName} ${data.boxer.lastName} to the database, thank you for your submission. You will be redirected back to the form, to add another boxer. `,
+          text: `Added ${data.boxer.firstName} ${data.boxer.lastName} to the database, thank you for your submission. You will be redirected back to the form, to add another boxer (if you want to). `,
           timer: 6000,
           icon: 'success',
-          confirmButtonText: 'Cool',
+          confirmButtonText: 'Cool 😎',
         });
+        setTimeout(() => {
+          window.location.reload();
+        }, 7000);
       } catch (error) {
         console.log(error);
         Swal.fire({
           title: 'Oops!',
-          text: `${error.message}`,
+          text: `${error}`,
           icon: 'error',
           confirmButtonText: 'TKO 🥊',
         });

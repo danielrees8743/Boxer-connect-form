@@ -24,7 +24,6 @@ export const fetchClubs = async () => {
 
 export const sendBoxerForm = async (data) => {
   console.log('Data', data);
-  // data.dob = new Date(data.dob).toLocaleDateString('en-GB');
 
   try {
     const response = await axios.post(
@@ -44,7 +43,7 @@ export const sendBoxerForm = async (data) => {
 
     return response.data;
   } catch (error) {
-    console.log(error);
-    throw new Error(error);
+    console.log(error.response.data.message);
+    throw new Error(error.response.data.message);
   }
 };
