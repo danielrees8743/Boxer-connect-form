@@ -10,7 +10,11 @@ export default function Header() {
         <nav className='nav'>
           <ul className='nav-items'>
             <li>
-              <a href='#'>Github</a>
+              <a
+                href='https://github.com/danielrees8743/boxer-connect'
+                target='_blank'>
+                Github
+              </a>
             </li>
             <li>
               <a href='#'>Issues</a>

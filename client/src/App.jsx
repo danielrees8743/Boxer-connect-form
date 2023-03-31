@@ -1,11 +1,11 @@
-import Form from './components/Form';
+import BoxerForm from './components/BoxerForm';
 import Header from './components/Header';
 
 function App() {
   return (
     <div className='App'>
       <Header />
-      <Form />
+      <BoxerForm />
     </div>
   );
 }

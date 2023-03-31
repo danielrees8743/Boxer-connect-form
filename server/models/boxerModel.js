@@ -1,6 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 import Club from './clubModel.js';
 import shortid from 'shortid';
+import { uploadImageToStorage } from '../utils/handleImage.js';
 
 const boxerSchema = new Schema({
   club: {
@@ -63,6 +64,11 @@ const boxerSchema = new Schema({
     required: [true, 'Please enter if you are fit to fight'],
   },
 });
+
+// boxerSchema.pre('save', async function (next) {
+//   this.picture = await uploadImageToStorage();
+//   next();
+// });
 
 boxerSchema.pre('save', async function (next) {
   const club = await Club.findById(this.club);

@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  server:
+    build: ./server
+    container_name: server_container
+    restart: always
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./server:/server
+  client:
+    build: ./client
+    container_name: client_container
+    restart: always
+    ports:
+      - '5173:5137'
+    volumes:
+      - ./client:/client
